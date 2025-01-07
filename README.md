@@ -30,24 +30,24 @@ pytest
 Build the docker image:
 
 ```
-docker build -t serverkit-skimage-LoG .
+docker build -t serverkit-skimage-log .
 ```
 
 Run the server in a container:
 
 ```
-docker run -it --rm -p 8000:8000 serverkit-skimage-LoG:latest
+docker run -it --rm -p 8000:8000 serverkit-skimage-log:latest
 ```
 
 Running tests:
 
 ```
-docker run --rm serverkit-skimage-LoG:latest pytest
+docker run --rm serverkit-skimage-log:latest pytest
 ```
 
 Pushing the image to `registry.rcp.epfl.ch`:
 
 ```
-docker tag serverkit-skimage-LoG registry.rcp.epfl.ch/imaging-server-kit/serverkit-skimage-LoG
-docker push registry.rcp.epfl.ch/imaging-server-kit/serverkit-skimage-LoG
+docker tag serverkit-skimage-log registry.rcp.epfl.ch/imaging-server-kit/serverkit-skimage-log
+docker push registry.rcp.epfl.ch/imaging-server-kit/serverkit-skimage-log
 ```

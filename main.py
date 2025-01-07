@@ -71,7 +71,7 @@ class Parameters(BaseModel):
         json_schema_extra={"widget_type": "bool"},
     )
 
-    @field_validator("image", mode="before")
+    @field_validator("image", mode="after")
     def decode_image_array(cls, v) -> np.ndarray:
         image_array = serverkit.decode_contents(v)
         if image_array.ndim not in [2, 3]:
