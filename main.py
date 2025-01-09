@@ -56,7 +56,10 @@ class Parameters(BaseModel):
         description="Lower bound for scale space maxima.",
         ge=0.01,
         le=1.0,
-        json_schema_extra={"widget_type": "float"},
+        json_schema_extra={
+            "widget_type": "float",
+            "step": 0.01,
+        },
     )
     invert_image: bool = Field(
         default=False,
