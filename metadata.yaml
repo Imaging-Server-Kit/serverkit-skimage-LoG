@@ -1,7 +1,6 @@
 project_slug: "skimage-LoG"
 project_url: "https://scikit-image.org/docs/stable/api/skimage.feature.html#skimage.feature.blob_log"
 serverkit_repo_url: "https://example.com/serverkit-skimage-LoG"
-serverkit_author: "EPFL Center for Imaging"
 project_name: "LoG detector (Scikit-image)"
 description: "Implementation of a Laplacian of Gaussian (LoG) detector in Scikit-image."
 used_for:
