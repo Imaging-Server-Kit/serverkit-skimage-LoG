@@ -11,6 +11,7 @@ from skimage.exposure import rescale_intensity
 
 class Parameters(BaseModel):
     """Defines the algorithm parameters"""
+
     image: str = Field(
         ...,
         title="Image",
@@ -82,7 +83,7 @@ class Parameters(BaseModel):
         return image_array
 
 
-class Server(serverkit.Server):
+class LoGServer(serverkit.AlgorithmServer):
     def __init__(
         self,
         algorithm_name: str = "skimage-LoG",
@@ -141,8 +142,10 @@ class Server(serverkit.Server):
         points_params = {
             "name": "Detections",
             "opacity": 0.7,
-            "face_color": 'sigma',
-            "features": {'sigma': sigmas}  # sigmas = numpy array representing the point size
+            "face_color": "sigma",
+            "features": {
+                "sigma": sigmas
+            },  # sigmas = numpy array representing the point size
         }
 
         return [
@@ -156,9 +159,9 @@ class Server(serverkit.Server):
         return images
 
 
-server = Server()
+server = LoGServer()
 app = server.app
 
 
-if __name__=='__main__':
+if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000)

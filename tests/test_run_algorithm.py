@@ -12,12 +12,12 @@ from imaging_server_kit.client import Client
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from main import Server
+from main import LoGServer
 
 
 def run_algorithm_server_side():
     # Create a Server instance
-    server = Server()
+    server = LoGServer()
 
     # Get the algorithm parameters
     algo_params_schema = server.parameters_model.model_json_schema()
